@@ -1,0 +1,73 @@
+// card components
+class card {
+	constructor(value, suit){
+  this.value = value;
+  this.suit = suit;
+  }
+}
+class player {
+contructor(name){
+this.name = name
+}
+}
+
+// deck components
+class Deck {
+	constructor(){
+  this.deck = [];
+  this.reset();
+  this.shuffle();
+  
+  // function to build the deck 
+  const values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+  const suits = ['Spades', 'Diamonds', 'Hearts','Clubs'];
+  for (let suit in suits){
+  for (let value in values){
+  this.deck.push (`${values[value]} of ${suits[suit]}`);
+  }
+  }
+  }
+  // reset the deck
+reset(){
+this.deck = [];
+const values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+  const suits = ['Spades', 'Diamonds', 'Hearts','Clubs'];
+  for (let suit in suits){
+  for (let value in values){
+  this.deck.push (`${values[value]} of ${suits[suit]}`);
+  }
+  }
+  
+}
+// shuffle the deck
+ shuffle() {
+const {deck} = this;
+let m = deck.length, i;
+while (m){
+i = Math.floor(Math.random() * m--);
+[deck[m], deck[i]] = [deck[i], deck[m]];
+}
+return this;
+}
+//deal one card
+deal(){
+for (int i = 0; i < 52; i++){
+
+if( i % 2 == 1){
+player1.add(card);
+} else {
+player2.add(card);
+}
+}
+
+}
+
+
+
+}
+// print deck
+const deck1 = new Deck();
+deck1.shuffle()
+console.log(deck1.deck);
+deck1.deal()
+console.log(deck1.deck);
